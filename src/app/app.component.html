@@ -1,20 +1,4 @@
 <div class="main-container">
-  <div class="container" id="main"> <!-- TODO: move this to standalone component -->
-    <div *ngFor="let row of hexData">
-      <div *ngFor="let cell of row" class="hex"
-           [attr.data-x]="cell.x"
-           [attr.data-y]="cell.y"
-           [attr.data-z]="cell.z"
-           [attr.data-value]="cell.value">
-          <div class="hex inner">{{}}</div>
-      </div>
-    </div>
-  </div>
-  <div class="game-data"> <!-- TODO: move this to standalone component -->
-    <div class="game-status">Game Status: <span data-status="playing">playing</span></div><!-- TODO: use store for this -->
-    <div class="score">Score: <span>0</span></div><!-- TODO: use store for this -->
-    <div class="best-score">Best score: <span>0</span></div><!-- TODO: use store for this -->
-    <div class="controls">Controls: press q w e a s d to move cells</div>
-    <button class="reset">Reset game</button>
-  </div>
+  <hex-grid [hexData]="hexData"></hex-grid>
+  <game-data></game-data>
 </div>

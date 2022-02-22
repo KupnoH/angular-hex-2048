@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin-top: -5em;
+
+  div {
+    margin-bottom: 1em;
+  }
+
+  .reset {
+    padding: 1em;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 13px;
+    color: #E51;
+  }
+}

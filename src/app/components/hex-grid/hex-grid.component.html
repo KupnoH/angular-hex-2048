@@ -1,0 +1,11 @@
+<div class="container" id="main">
+  <div *ngFor="let row of hexData">
+    <div *ngFor="let cell of row" class="hex"
+         [attr.data-x]="cell.x"
+         [attr.data-y]="cell.y"
+         [attr.data-z]="cell.z"
+         [attr.data-value]="cell.value">
+      <div class="hex inner"><span class="value"></span></div>
+    </div>
+  </div>
+</div>
