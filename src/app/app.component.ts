@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HexDataType, HexRowType } from "./types/hexDataTypes";
+import { HexGridType, HexRowType } from "./types/hexDataTypes";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { HexDataType, HexRowType } from "./types/hexDataTypes";
 export class AppComponent implements OnInit {
   title = 'hex2048';
   radius: number = 3;
-  hexData: HexDataType = [];
+  hexData: HexGridType = [];
 
   ngOnInit() {
     this.buildHexGrid(this.radius);
