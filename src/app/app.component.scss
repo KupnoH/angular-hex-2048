@@ -1,0 +1,62 @@
+body div.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#main.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(.6);
+  margin-top: -150px;
+}
+#main div div:not([data-value='0']) {
+  transition: background-color 5ms;
+}
+.press-button {
+  color: #0a0a0a;
+  background-color: red;
+  display: inline;
+}
+.game-over {
+  color: red;
+}
+// This answer https://stackoverflow.com/a/19418615/8696371 is used for building hexes.
+.hex {
+  margin-top: 70px;
+  width: 208px;
+  height: 120px;
+  background: #6C6;
+  position: relative;
+  transform: rotate(90deg);
+}
+.hex:not(.hex.inner) {
+  margin-right: -50px;
+}
+.hex:before, .hex:after {
+  content:"";
+  border-left: 104px solid transparent;
+  border-right: 104px solid transparent;
+  position: absolute;
+}
+.hex:before {
+  top: -59px;
+  border-bottom: 60px solid #6C6;
+}
+.hex:after {
+  bottom: -59px;
+  border-top: 60px solid #6C6;
+}
+.hex.inner {
+  background-color:lightgrey;
+  -webkit-transform: scale(.8, .8);
+  -moz-transform: scale(.8, .8);
+  transform: scale(.8, .8);
+  z-index:1;
+}
+.hex.inner:before {
+  border-bottom: 60px solid lightgrey;
+}
+.hex.inner:after {
+  border-top: 60px solid lightgrey;
+}
