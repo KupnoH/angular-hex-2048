@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'hex2048';
   radius: number = 3;
   hexData: HexGridType = [];
-  RNGServerURL = 'https://hex2048szb9jquj-hex15.functions.fnc.fr-par.scw.cloud';
+  RNGServerURL = 'http://localhost:13337';
 
   constructor(private helper: HelperService) {
   }
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   }
 
   makeCellsRequest() {
-    this.helper.getCellsData(3, this.RNGServerURL, []).subscribe(data => this.addCellValues(data))
+    this.helper.getCellsData(this.radius, this.RNGServerURL, []).subscribe(data => this.addCellValues(data))
   }
 
   addCellValues(values: any): void {

@@ -1,27 +1,32 @@
 # Hex2048
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+## RNG server.
 
-## Development server
+Use `npm run start-server` command to start rng server.It uses 13337 port by default.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To request cell data from server use post request to the server with radius from 2 to 20, with radius passed in url path. For example: `http://localhost:13337/3`.
 
-## Code scaffolding
+Cells data should be passed as array of cell data in body. Like this:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`[
+  {
+    "x": 1,
+    "y": -1,
+    "z": 0,
+    "value": 2
+  },`
 
-## Build
+  `{
+    "x": 0,
+    "y": -1,
+    "z": 1,
+    "value": 2
+  },`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  `{
+    "x": -1,
+    "y": 0,
+    "z": 1,
+    "value": 2
+  }
+]`

@@ -13,6 +13,4 @@ export class HexGridComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }
